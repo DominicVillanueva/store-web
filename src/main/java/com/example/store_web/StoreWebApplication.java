@@ -7,6 +7,5 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class StoreWebApplication {
   public static void main(String[] args) {
     SpringApplication.run(StoreWebApplication.class, args);
-    System.out.println("Hola Mundo");
   }
 }
