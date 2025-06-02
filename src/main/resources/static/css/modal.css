@@ -1,0 +1,144 @@
+.modal-backdrop.show {
+    background-color: rgba(var(--dark-color-rgb, 33, 37, 41), 0.7);
+}
+
+#agregarProductoModal .modal-content,
+#modalEliminarProducto .modal-content {
+    border: none;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    font-family: var(--font-poppins);
+}
+
+#agregarProductoModal .modal-header,
+#modalEliminarProducto .modal-header {
+    background-color: var(--primary-color);
+    border-bottom: none;
+    padding: 1.5rem 2rem;
+    position: relative;
+    color: var(--white-color);
+}
+
+#agregarProductoModal .modal-header .modal-title,
+#modalEliminarProducto .modal-header .modal-title {
+    color: var(--white-color);
+    font-family: var(--font-poppins);
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+#agregarProductoModal .modal-header .btn-close,
+#modalEliminarProducto .modal-header .btn-close {
+    filter: invert(1) grayscale(100%);
+    opacity: 0.8;
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+#agregarProductoModal .modal-header .btn-close:hover,
+#modalEliminarProducto .modal-header .btn-close:hover {
+    opacity: 1;
+    transform: rotate(90deg);
+}
+
+#agregarProductoModal .modal-body,
+#modalEliminarProducto .modal-body {
+    padding: 1.5rem 2rem;
+    background-color: var(--white-color);
+}
+
+#agregarProductoModal .modal-body .form-label,
+#modalEliminarProducto .modal-body .form-label {
+     color: var(--dark-color);
+     font-weight: 600;
+     margin-bottom: .5rem;
+     display: block;
+}
+
+#agregarProductoModal .modal-body .form-control,
+#agregarProductoModal .modal-body .form-select,
+#modalEliminarProducto .modal-body .form-control,
+#modalEliminarProducto .modal-body .form-select {
+   font-family: var(--font-poppins);
+   border-radius: .4rem;
+   padding: .65rem 1rem;
+   box-shadow: none;
+   transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#agregarProductoModal .modal-body .form-control:focus,
+#agregarProductoModal .modal-body .form-select:focus,
+#modalEliminarProducto .modal-body .form-control:focus,
+#modalEliminarProducto .modal-body .form-select:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.2rem rgba(var(--secondary-color-rgb, 255, 193, 7), 0.25);
+    outline: none;
+}
+
+#agregarProductoModal .modal-body .form-text,
+#modalEliminarProducto .modal-body .form-text {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-top: .25rem;
+}
+
+#agregarProductoModal .modal-footer,
+#modalEliminarProducto .modal-footer {
+    background-color: var(--white-color);
+    border-top: 1px solid var(--light-color);
+    padding: 1rem 2rem;
+    justify-content: flex-end;
+}
+
+#agregarProductoModal .modal-footer .btn,
+#modalEliminarProducto .modal-footer .btn {
+    padding: .6rem 1.25rem;
+    border-radius: .4rem;
+    font-weight: 600;
+    font-family: var(--font-poppins);
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+}
+
+#agregarProductoModal .modal-footer .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--white-color);
+}
+#agregarProductoModal .modal-footer .btn-primary:hover,
+#agregarProductoModal .modal-footer .btn-primary:focus {
+    background-color: #D01B5B;
+    border-color: #D01B5B;
+    color: var(--white-color);
+    box-shadow: 0 4px 8px rgba(var(--primary-color-rgb), 0.3);
+}
+
+#agregarProductoModal .modal-footer .btn-secondary,
+#modalEliminarProducto .modal-footer .btn-secondary {
+    color: var(--dark-color);
+    border-color: var(--dark-color);
+    background-color: transparent;
+}
+#agregarProductoModal .modal-footer .btn-secondary:hover,
+#agregarProductoModal .modal-footer .btn-secondary:focus,
+#modalEliminarProducto .modal-footer .btn-secondary:hover,
+#modalEliminarProducto .modal-footer .btn-secondary:focus {
+    color: var(--white-color);
+    background-color: var(--dark-color);
+    border-color: var(--dark-color);
+    box-shadow: 0 4px 8px rgba(var(--dark-color-rgb, 33, 37, 41), 0.2);
+}
+
+#modalEliminarProducto .modal-footer .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: var(--white-color);
+    transition: all 0.2s ease;
+}
+#modalEliminarProducto .modal-footer .btn-danger:hover,
+#modalEliminarProducto .modal-footer .btn-danger:focus {
+    background-color: #a71d2a;
+    border-color: #a71d2a;
+    color: var(--white-color);
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+}

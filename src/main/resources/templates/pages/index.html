@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelmer - Ropa para Niños y Niñas</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+          integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Raleway:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/catalogo.css}">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-offset="90">
+
+    <div th:replace="~{fragments/header :: navbar}"></div>
+
+
+    <section id="inicio" class="hero-section d-flex align-items-center text-center text-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                     <h1 class="display-3 hero-title mb-3">Estilo y Diversión para tus Peques</h1>
+                    <p class="lead hero-subtitle col-lg-8 mx-auto mb-4">
+                        Descubre la nueva colección de ropa para niños y niñas. ¡Calidad, comodidad y los diseños más alegres!
+                    </p>
+                    <a href="#productos-destacados" class="btn btn-primary btn-lg mt-3 scroll-button">Ver Productos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="quienes-somos" class="py-6">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="section-title">Sobre Kelmer</h2> <p class="text-muted">
+                        En Kelmer, creemos que la ropa infantil debe ser tan divertida y única como los niños que la usan. Nacimos de la idea de ofrecer prendas de alta calidad, con diseños creativos y cómodos,
+                        que acompañen a los más pequeños en todas sus aventuras.
+                    </p>
+                    <p class="text-muted">
+                        Seleccionamos cuidadosamente cada tela y material, pensando en la delicada piel de los niños y en la durabilidad
+                        que necesitan los padres. ¡Viste a tus hijos con alegría y confianza!
+                    </p>
+                    <a href="#contactanos" class="btn btn-outline-primary mt-3 scroll-button">Habla con Nosotros</a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://plus.unsplash.com/premium_photo-1722945643671-a65335693dfe?q=80&w=1506&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Niños felices vistiendo Kelmer" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="productos-destacados" class="py-6 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Nuestros Favoritos</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card product-card h-100 shadow-sm">
+                         <img src="https://images.unsplash.com/photo-1601925240970-98447486fcdb?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Vestido floreado niña">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Vestido Primavera</h5>
+                            <p class="card-text text-primary fw-bold">$25.00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card product-card h-100 shadow-sm">
+                         <img src="https://images.unsplash.com/photo-1604482858862-1db908a653e4?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Conjunto aventurero niño">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Conjunto Explorador</h5>
+                            <p class="card-text text-primary fw-bold">$30.00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card product-card h-100 shadow-sm">
+                         <img src="https://plus.unsplash.com/premium_photo-1693242804074-20a78966f4e6?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Blusa y falda niña">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Set Dulce Mirada</h5>
+                            <p class="card-text text-primary fw-bold">$28.00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card product-card h-100 shadow-sm">
+                         <img src="https://images.unsplash.com/photo-1625517527468-a6f1e2b124be?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Camiseta divertida niño">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Camiseta DinoAventura</h5>
+                            <p class="card-text text-primary fw-bold">$18.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h3 class="section-title-minor text-center my-5">Más Estilos Encantadores</h3>
+             <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card product-card h-100 shadow-sm">
+                         <img src="https://images.unsplash.com/photo-1586954151244-599b59bc6e97?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Mameluco suave bebé">
+                         <div class="card-body text-center">
+                            <h5 class="card-title">Mameluco Algodoncito</h5>
+                            <p class="card-text text-primary fw-bold">$22.00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card product-card h-100 shadow-sm">
+                         <img src="https://images.unsplash.com/photo-1578135897452-b0ea05653975?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Conjunto tejido bebé">
+                         <div class="card-body text-center">
+                            <h5 class="card-title">Abrazo Tejido</h5>
+                            <p class="card-text text-primary fw-bold">$35.00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card product-card h-100 shadow-sm">
+                         <img src="https://images.unsplash.com/photo-1534880786429-7cb3199b7b0f?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Gorro divertido">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Gorro Orejitas</h5>
+                            <p class="card-text text-primary fw-bold">$12.00</p>
+                        </div>
+                    </div>
+                </div>
+             </div>
+             <div class="text-center mt-5">
+                 <a class="btn btn-outline-primary btn-lg" href="/catalogo">Ver Todos los Productos</a>
+             </div>
+        </div>
+    </section>
+
+    <section id="testimonios" class="py-6">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Lo que Dicen Nuestros Clientes Felices</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card testimonial-card h-100 shadow">
+                        <div class="card-body text-center">
+                             <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Cliente sonriente" class="testimonial-img rounded-circle mb-3">
+                            <p class="card-text fst-italic mb-3">"¡La ropa es hermosa y de excelente calidad! A mi hija le encantó su nuevo vestido. Definitivamente volveré a comprar."</p>
+                            <h5 class="testimonial-name mt-2 mb-0">Laura G.</h5>
+                            <small class="text-muted">Mamá de Sofía</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card testimonial-card h-100 shadow">
+                        <div class="card-body text-center">
+                             <img src="https://randomuser.me/api/portraits/men/25.jpg" alt="Cliente sonriente" class="testimonial-img rounded-circle mb-3">
+                             <p class="card-text fst-italic mb-3">"Servicio rápido y prendas muy originales. Los conjuntos para mi hijo son perfectos para jugar todo el día. ¡Recomendados!"</p>
+                            <h5 class="testimonial-name mt-2 mb-0">Carlos M.</h5>
+                            <small class="text-muted">Papá de Mateo</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card testimonial-card h-100 shadow">
+                        <div class="card-body text-center">
+                             <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Cliente sonriente" class="testimonial-img rounded-circle mb-3">
+                            <p class="card-text fst-italic mb-3">"Compré un regalo para mi nieta y quedó fascinada. Las telas son muy suaves y los diseños adorables. Muy buena atención."</p>
+                            <h5 class="testimonial-name mt-2 mb-0">Ana R.</h5>
+                            <small class="text-muted">Abuela de Lucía</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contactanos" class="py-6 bg-light">
+        <div class="container">
+          <h2 class="section-title text-center mb-5">Ponte en Contacto</h2>
+          <div class="row">
+            <!-- Formulario -->
+            <div class="col-lg-7">
+              <form action="/correo-enviado" method="post">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="nombre" class="form-label">Nombres</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu Nombre" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="apellido" class="form-label">Apellidos</label>
+                    <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Tu Apellido" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="numero" class="form-label">Número de Celular</label>
+                    <input type="number" maxlength="9" class="form-control" id="numero" name="numero" placeholder="Tu Nro° de celular" required 
+                      oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="email" class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="email" name="correo" placeholder="tu@email.com" required>
+                  </div>
+                  <div class="col-12">
+                    <label for="mensaje" class="form-label">Mensaje</label>
+                    <textarea class="form-control" id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                  </div>
+                  <div class="col-12 text-center">
+                    <button type="submit" class="btn btn-outline-primary btn-lg">Enviar Mensaje</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+              
+            <!-- Mapa + Texto -->
+            <div class="col-lg-5 my-4">
+              <div class="mb-3 text-center">
+                <p class="text-muted fs-6">
+                  ¿Tienes preguntas o quieres saber más sobre nuestros productos? ¡Ven a visitarnos!
+                </p>
+              </div>
+              <div class="map-responsive shadow-sm rounded overflow-hidden">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.9273078881566!2d-77.037852!3d-12.045706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8d5e9a6d5c7%3A0x63f9374387bd57d2!2sCentro%20de%20Lima%2C%20Per%C3%BA!5e0!3m2!1ses!2spe!4v1689474918321!5m2!1ses!2spe" 
+                  width="100%" 
+                  height="500" 
+                  style="border:0;" 
+                  allowfullscreen="" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="text-center mt-5">
+              <p class="lead mb-3">También puedes encontrarnos en:</p>
+              <p class="mb-1"><i class="fas fa-map-marker-alt me-2"></i>Av. Grau 203023, Lima</p>
+              <p class="mb-1"><i class="fas fa-phone me-2"></i>(+51) 932 342 342</p>
+              <p><i class="fas fa-envelope me-2"></i>elmersssntm@email.com</p>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/51918515126?text=Hola%2C%20necesito%20más%20información%20sobre%20sus%20productos" 
+       class="whatsapp-float" 
+       target="_blank" 
+       aria-label="Chatea con nosotros por WhatsApp" 
+       title="¿Necesitas ayuda? Escríbenos por WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" />
+    </a>
+    
+    <footer class="py-5 bg-dark text-white text-center">
+        <div class="container">
+            <p class="mb-2">&copy; <span th:text="${#dates.year(#dates.createNow())}">2025</span> Kelmer. Todos los derechos reservados.</p>
+            <p class="mb-3">Diseñado con <i class="fas fa-heart text-danger"></i> para los peques.</p>
+            <div class="mt-3">
+                <a href="#" class="text-white mx-2"><i class="fab fa-facebook-f fa-lg"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-instagram fa-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+    <script th:src="@{/js/scripts.js}"></script>
+</body>
+</html>

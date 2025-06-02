@@ -32,6 +32,8 @@ CREATE TABLE producto (
 CREATE TABLE contacto (
     id_contacto INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
+    apellido VARCHAR(100) NOT NULL,
+    numero VARCHAR(20) NOT NULL,
     correo VARCHAR(100) NOT NULL,
     mensaje TEXT NOT NULL,
     fecha_envio TIMESTAMP DEFAULT CURRENT_TIMESTAMP

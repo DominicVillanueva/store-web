@@ -1,0 +1,28 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.card {
+    border-radius: 1rem;
+    border: none;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: #343a40;
+}
+
+.form-label {
+    font-weight: 500;
+}
+
+.form-control,
+.form-select {
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.alert {
+    font-size: 0.9rem;
+}

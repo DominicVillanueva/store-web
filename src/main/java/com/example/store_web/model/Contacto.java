@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.example.store_web.model;
 
 import jakarta.persistence.*;
@@ -22,6 +18,12 @@ public class Contacto {
 
   @Column(name = "nombre", nullable = false, length = 100)
   private String nombre;
+  
+  @Column(name = "apellido", nullable = false, length = 100)
+  private String apellido;
+  
+  @Column(name = "numero", nullable = false, length = 20)
+  private String numero;
 
   @Column(name = "correo", nullable = false, length = 100)
   private String correo;
@@ -47,6 +49,22 @@ public class Contacto {
   public void setNombre(String nombre) {
     this.nombre = nombre;
   }
+  
+  public String getApellido() {
+    return apellido;
+  }
+  
+  public void setApellido(String apellido) {
+    this.apellido = apellido;
+  }
+  
+  public String getNumero() {
+    return numero;
+  }
+  
+  public void setNumero(String numero) {
+    this.numero = numero;
+  }
 
   public String getCorreo() {
     return correo;
@@ -71,5 +89,4 @@ public class Contacto {
   public void setFechaEnvio(LocalDateTime fechaEnvio) {
     this.fechaEnvio = fechaEnvio;
   }
-
 }

@@ -1,0 +1,173 @@
+.catalogo-title-section {
+    background-color: #f8f9fa; /* Fondo gris claro */
+    padding: 4rem 0; /* Espaciado vertical */
+    text-align: center; /* Centrar el título */
+}
+
+.catalogo-title-section .section-title {
+    /* Reutiliza el estilo general de .section-title */
+    margin-bottom: 0;
+}
+
+/* Barra de filtros y ordenamiento */
+.filter-sort-bar {
+    background-color: var(--white-color); /* Fondo blanco */
+    padding: 1rem 0; /* Espaciado vertical */
+    border-bottom: 1px solid #e9ecef; /* Borde inferior */
+    font-size: 0.9rem;
+}
+
+.filter-sort-bar .container > .row {
+    align-items: center; /* Alinear verticalmente */
+}
+
+.filter-sort-bar .form-label {
+    font-weight: 500;
+    margin-right: 0.5rem;
+    margin-bottom: 0; /* Importante para layout horizontal */
+    flex-shrink: 0; /* Evita que se encoja */
+}
+
+.filter-sort-bar .filter-selects {
+    margin-right: 1rem;
+    gap: 8px 0;
+}
+
+
+/* Estilos para los selectores de filtro DENTRO del contenedor .filter-selects */
+.filter-sort-bar .filter-selects .form-select {
+    vertical-align: middle;
+    margin-bottom: 0;
+    width: 150px;
+    font-size: 0.9rem;
+    padding: 0.375rem 1.75rem 0.375rem 0.75rem;
+    height: calc(1.8125rem + 2px);
+    border-radius: 0.25rem;
+}
+
+/* Asegurar que el último selector de filtro en el grupo no tenga margen a la derecha */
+.filter-sort-bar .filter-selects .form-select:last-child {
+     margin-right: 0 !important;
+}
+
+.filter-sort-bar .text-md-end {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Alinear a la derecha */
+}
+
+.filter-sort-bar .text-md-end .form-label {
+     margin-right: 0.5rem;
+     margin-bottom: 0;
+     flex-shrink: 0;
+}
+
+.filter-sort-bar .text-md-end .form-select {
+     width: auto; /* Ancho automático o fijo */
+     flex-grow: 0;
+     flex-shrink: 0;
+     margin-right: 0; /* No margen a la derecha si es el último */
+}
+
+
+/* Estilos para las tarjetas de producto en el catálogo (reutilizando .product-card de style.css) */
+#productos-catalogo .product-card {
+     /* Ajustes si quieres que las tarjetas en el catálogo se vean diferente de los destacados */
+     border-radius: 0.5rem;
+}
+
+#productos-catalogo .product-card img {
+    /* Ajusta esta altura para que coincida con la imagen de referencia si 300px no es exacto */
+    height: 300px;
+    object-fit: cover;
+    /* Asegurar bordes redondeados arriba si el card los tiene */
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#productos-catalogo .product-card .card-body {
+    text-align: center;
+    padding: 1rem; /* Padding interno del cuerpo de la tarjeta */
+}
+
+#productos-catalogo .product-card .card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+#productos-catalogo .product-card .card-text {
+    font-size: 1.0rem;
+    font-weight: 700;
+    color: var(--dark-color); /* Color del precio (oscuro como en la imagen) */
+    margin-bottom: 0.5rem;
+}
+
+/* Estilos para los indicadores de color/tamaño (si los implementas en el HTML) */
+/* .product-colors span { ... } */
+
+
+/* Estilos para la paginación (reutilizando clases de Bootstrap y colores de tus variables) */
+.pagination {
+    margin-top: 1.5rem;
+}
+
+.pagination .page-link {
+    color: var(--primary-color);
+}
+.pagination .page-item.active .page-link {
+     background-color: var(--primary-color);
+     border-color: var(--primary-color);
+     color: var(--white-color);
+}
+.pagination .page-link:hover {
+     color: var(--primary-color);
+     background-color: var(--light-color);
+     border-color: var(--primary-color);
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 64px;
+    height: 64px;
+    background-color: #25D366;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.whatsapp-float img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.btn-outline-primary {
+    margin-left: 3rem;
+    font-family: var(--font-poppins);
+    font-weight: 600;
+    padding: 0.9rem 2.8rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border-color: var(--primary-color);
+}

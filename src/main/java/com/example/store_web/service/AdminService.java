@@ -4,6 +4,7 @@ import com.example.store_web.model.AdminUsuario;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.NoResultException;
 import jakarta.persistence.PersistenceContext;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 /**
@@ -18,7 +19,7 @@ public class AdminService {
   
   public AdminUsuario buscarPorUsuario(String usuario) {
     try {
-      return entityManager.createQuery("SELECT a FROM Admin_usuario a WHERE a.usuario = :usuario", AdminUsuario.class)
+      return entityManager.createQuery("SELECT a FROM AdminUsuario a WHERE a.usuario = :usuario", AdminUsuario.class)
               .setParameter("usuario", usuario)
               .getSingleResult();
     } catch(NoResultException e) {

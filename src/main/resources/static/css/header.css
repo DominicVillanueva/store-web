@@ -1,0 +1,114 @@
+:root {
+    --primary-color: #E91E63;
+    --secondary-color: #FFC107;
+    --dark-color: #212529;
+    --light-color: #f8f9fa;
+    --white-color: #fff;
+    --font-heading: 'Pacifico', cursive;
+    --font-poppins: 'Poppins', sans-serif;
+    --primary-color-rgb: 233, 30, 99;
+}
+
+
+.navbar {
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: var(--white-color) !important;
+    border-bottom: 1px solid var(--light-color);
+}
+
+.navbar-brand.logo-text {
+    font-family: var(--font-heading);
+    font-size: 2.4rem;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+.navbar-brand.logo-text:hover {
+    color: var(--dark-color);
+}
+
+.nav-link {
+    font-family: var(--font-poppins);
+    font-weight: 500;
+    color: var(--dark-color);
+    margin-right: 25px;
+    padding: 0.5rem 0.8rem;
+    position: relative;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: 5px;
+}
+.nav-link:last-child {
+    margin-right: 0;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+    background-color: rgba(var(--primary-color-rgb), 0.05);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: var(--primary-color) !important;
+}
+.nav-link.active::after {
+    width: 0;
+}
+
+
+.navbar-toggler {
+    border: none;
+    padding: 0.3rem 0.8rem;
+    font-size: 1.3rem;
+    transition: transform 0.3s ease;
+}
+.navbar-toggler:focus {
+     box-shadow: none;
+     outline: none;
+}
+.navbar-toggler:active {
+     transform: scale(0.95);
+}
+
+.navbar-nav .nav-link i {
+    font-size: 1.3rem;
+    transition: color 0.3s ease;
+}
+.navbar-nav .nav-link i:hover {
+     color: var(--primary-color);
+}
+
+.navbar-nav.d-flex.flex-row a.nav-link {
+    margin-left: 15px;
+    margin-right: 0;
+    padding: 0.5rem 0.5rem;
+    border-bottom: none;
+}
+.navbar-nav.d-flex.flex-row a.nav-link::after {
+    content: none;
+}
+
+body {
+     padding-top: 90px;
+}
+
+:root {
+    --primary-color-rgb: 233, 30, 99;
+    --secondary-color-rgb: 255, 193, 7;
+}

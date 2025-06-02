@@ -5,6 +5,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.ParameterMode;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.StoredProcedureQuery;
+import jakarta.persistence.TypedQuery;
 import jakarta.transaction.Transactional;
 import java.util.List;
 import org.springframework.stereotype.Service;
@@ -25,8 +26,22 @@ public class ProductoService {
   }
 
   @Transactional
-  public void actualizar(Producto producto) {
+  public String actualizar(Producto productoNuevo, int id) {
+    String message = "mensaje";
+    Producto producto = entityManager.find(Producto.class, id);
+    // Actualizar datos
+    producto.setNombre(productoNuevo.getNombre());
+    producto.setDescripcion(productoNuevo.getDescripcion());
+    producto.setPrecio(productoNuevo.getPrecio());
+    producto.setImagenUrl(productoNuevo.getImagenUrl());
+    producto.setTalla(productoNuevo.getTalla());
+    producto.setGenero(productoNuevo.getGenero());
+    producto.setEdadSugerida(productoNuevo.getEdadSugerida());
+    producto.setCategoria(productoNuevo.getCategoria());
     entityManager.merge(producto);
+    
+    message = "¡Producto actualizado correctamente!";
+    return message;
   }
 
   @Transactional
@@ -40,9 +55,20 @@ public class ProductoService {
   public Producto buscarPorId(Integer id) {
     return entityManager.find(Producto.class, id);
   }
-
+  
   public List<Producto> listarTodos() {
     return entityManager.createQuery("SELECT p FROM Producto p", Producto.class).getResultList();
+  }
+
+  public List<Producto> listarProductosPaginados(int firstResult, int maxResults) {
+    TypedQuery<Producto> query = entityManager.createQuery("SELECT p FROM Producto p", Producto.class);
+    query.setFirstResult(firstResult);
+    query.setMaxResults(maxResults);
+    return query.getResultList();
+  }
+  
+  public long contarProductos() {
+    return (long) entityManager.createQuery("SELECT COUNT(p) FROM Producto p").getSingleResult();
   }
 
   // metodos para filtrar

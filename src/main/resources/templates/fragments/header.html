@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+    <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm" th:fragment="navbar">
+        <div class="container">
+            <a class="navbar-brand logo-text" href="/">Kelmer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" th:classappend="${currentURI == '/'} ? 'active'" href="/">Inicio</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#quienes-somos">Quiénes Somos</a>
+                    </li>
+
+                     <li class="nav-item">
+                         <a class="nav-link" th:classappend="${currentURI == '/catalogo'} ? 'active'" href="/catalogo">Tienda</a>
+                     </li>
+
+                     <li class="nav-item">
+                        <a class="nav-link" href="/#productos-destacados">Favoritos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#testimonios">Testimonios</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#contactanos">Contáctanos</a>
+                    </li>
+                </ul>
+                <div class="navbar-nav ms-auto d-flex flex-row align-items-center">
+                     <a class="nav-link me-2 me-lg-0" href="/login"><i class="fas fa-user"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</body>
+</html>
