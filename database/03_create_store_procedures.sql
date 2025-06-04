@@ -23,9 +23,9 @@ BEGIN
     INNER JOIN
         categoria c ON p.id_categoria = c.id_categoria
     WHERE
-        (p_nombre_categoria IS NULL OR c.nombre = p_nombre_categoria)
-        AND (p_genero IS NULL OR p.genero = p_genero)
-        AND (p_edad_sugerida IS NULL OR p.edad_sugerida = p_edad_sugerida);
+        (p_nombre_categoria IS NULL OR c.nombre COLLATE utf8mb4_unicode_ci = p_nombre_categoria COLLATE utf8mb4_unicode_ci)
+        AND (p_genero IS NULL OR p.genero COLLATE utf8mb4_unicode_ci = p_genero COLLATE utf8mb4_unicode_ci)
+        AND (p_edad_sugerida IS NULL OR p.edad_sugerida COLLATE utf8mb4_unicode_ci = p_edad_sugerida COLLATE utf8mb4_unicode_ci);
 END //
 DELIMITER ;
 

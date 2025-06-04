@@ -4,13 +4,8 @@ import com.example.store_web.model.AdminUsuario;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.NoResultException;
 import jakarta.persistence.PersistenceContext;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-/**
- *
- * @author Usuario
- */
 @Service
 public class AdminService {
 

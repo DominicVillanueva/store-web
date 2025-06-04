@@ -10,10 +10,6 @@ import jakarta.transaction.Transactional;
 import java.util.List;
 import org.springframework.stereotype.Service;
 
-/**
- *
- * @author Usuario
- */
 @Service
 public class ProductoService {
 

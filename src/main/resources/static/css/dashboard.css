@@ -1,44 +1,50 @@
 #admin-productos-section {
     padding-bottom: 50px;
 }
+
 .product-image-thumbnail {
     width: 50px;
     height: auto;
-    border-radius: .25rem; /* Bordes redondeados pequeños */
+    border-radius: .25rem;
 }
+
 .action-buttons .btn {
-     padding: .25rem .5rem; /* Padding más pequeño para botones de acción */
-     font-size: .875rem; /* Tamaño de fuente más pequeño */
-     margin-right: .25rem; /* Espacio entre botones */
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    margin-right: .25rem;
 }
-/* Estilo para la tabla responsiva */
+
 .table-responsive {
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch; /* Desplazamiento suave en dispositivos táctiles */
+    -webkit-overflow-scrolling: touch;
 }
- /* Estilo para centrar celdas específicas si es necesario */
+
 .table th,
 .table td {
-    vertical-align: middle; /* Alinea verticalmente el contenido de las celdas */
+    vertical-align: middle;
 }
-.table th:nth-child(1), /* Columna ID */
+
+.table th:nth-child(1),
 .table td:nth-child(1) {
-   width: 80px; /* Ancho fijo para columna ID */
-   text-align: center;
-}
-.table td:nth-child(3), /* Columna Precio */
-.table th:nth-child(3) {
-   width: 120px; /* Ancho fijo para columna Precio */
-   text-align: right;
-}
-.table td:nth-child(4) { /* Columna Imagen */
     width: 80px;
     text-align: center;
 }
-.table th:last-child, /* Columna Acciones */
+
+.table td:nth-child(3),
+.table th:nth-child(3) {
+    width: 120px;
+    text-align: right;
+}
+
+.table td:nth-child(4) {
+    width: 80px;
+    text-align: center;
+}
+
+.table th:last-child,
 .table td:last-child {
-   width: 150px; /* Ancho fijo para columna Acciones */
-   text-align: center;
+    width: 150px;
+    text-align: center;
 }
 
 .table tr {

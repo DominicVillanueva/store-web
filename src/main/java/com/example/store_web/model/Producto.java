@@ -2,10 +2,6 @@ package com.example.store_web.model;
 
 import jakarta.persistence.*;
 
-/**
- *
- * @author Usuario
- */
 @Entity
 @Table(name = "producto")
 public class Producto {

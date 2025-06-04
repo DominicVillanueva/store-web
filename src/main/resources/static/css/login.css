@@ -1,39 +1,39 @@
-/* static/css/login.css */
-
 .login-body {
-    background-color: #f4f7f6; /* Un fondo muy suave, ligeramente diferente al de las secciones bg-light */
-    font-family: 'Raleway', sans-serif; /* Coherencia con style.css */
+    background-color: #f4f7f6;
+    font-family: 'Raleway', sans-serif;
 }
 
 .login-card {
     border: none;
-    border-radius: 15px; /* Bordes más suaves */
+    border-radius: 15px;
 }
 
 .login-page-logo-text {
-    font-family: 'Pacifico', cursive; /* Misma fuente que el logo principal */
-    font-size: 3rem; /* Un poco más grande aquí */
-    color: #E91E63; /* Color principal de Kellix, tomado de tu style.css implícito */
+    font-family: 'Pacifico', cursive;
+    font-size: 3rem;
+    color: #E91E63;
     text-decoration: none;
     transition: color 0.3s ease;
     cursor: default;
 }
+
 .login-page-logo-text:hover {
-    color: #c2185b; /* Oscurecer al hacer hover */
+    color: #c2185b;
 }
 
 .login-page-title {
-    font-family: 'Poppins', sans-serif; /* Fuente Poppins para títulos de formulario */
+    font-family: 'Poppins', sans-serif;
     font-weight: 600;
     color: #333;
 }
 
 .login-card .form-control {
-    border-radius: 8px; /* Bordes redondeados para los inputs */
-    padding: 0.9rem 1rem; /* Un poco más de padding */
+    border-radius: 8px;
+    padding: 0.9rem 1rem;
     font-family: 'Poppins', sans-serif;
     font-size: 0.95rem;
 }
+
 .login-card .form-control:focus {
     border-color: #E91E63;
     box-shadow: 0 0 0 0.2rem rgba(233, 30, 99, 0.25);
@@ -44,8 +44,9 @@
     font-size: 0.95rem;
     color: #777;
 }
+
 .login-card .form-floating > label i {
-    font-size: 0.9em; /* Ajustar tamaño de iconos en labels */
+    font-size: 0.9em;
 }
 
 .login-submit-btn {
@@ -58,6 +59,7 @@
     border-radius: 8px;
     transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 }
+
 .login-submit-btn:hover {
     background-color: #c2185b;
     border-color: #b91652;

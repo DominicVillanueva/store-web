@@ -1,31 +1,29 @@
 .catalogo-title-section {
-    background-color: #f8f9fa; /* Fondo gris claro */
-    padding: 4rem 0; /* Espaciado vertical */
-    text-align: center; /* Centrar el título */
+    background-color: #f8f9fa;
+    padding: 4rem 0;
+    text-align: center;
 }
 
 .catalogo-title-section .section-title {
-    /* Reutiliza el estilo general de .section-title */
     margin-bottom: 0;
 }
 
-/* Barra de filtros y ordenamiento */
 .filter-sort-bar {
-    background-color: var(--white-color); /* Fondo blanco */
-    padding: 1rem 0; /* Espaciado vertical */
-    border-bottom: 1px solid #e9ecef; /* Borde inferior */
+    background-color: var(--white-color);
+    padding: 1rem 0;
+    border-bottom: 1px solid #e9ecef;
     font-size: 0.9rem;
 }
 
 .filter-sort-bar .container > .row {
-    align-items: center; /* Alinear verticalmente */
+    align-items: center;
 }
 
 .filter-sort-bar .form-label {
     font-weight: 500;
     margin-right: 0.5rem;
-    margin-bottom: 0; /* Importante para layout horizontal */
-    flex-shrink: 0; /* Evita que se encoja */
+    margin-bottom: 0;
+    flex-shrink: 0;
 }
 
 .filter-sort-bar .filter-selects {
@@ -33,8 +31,6 @@
     gap: 8px 0;
 }
 
-
-/* Estilos para los selectores de filtro DENTRO del contenedor .filter-selects */
 .filter-sort-bar .filter-selects .form-select {
     vertical-align: middle;
     margin-bottom: 0;
@@ -45,42 +41,36 @@
     border-radius: 0.25rem;
 }
 
-/* Asegurar que el último selector de filtro en el grupo no tenga margen a la derecha */
 .filter-sort-bar .filter-selects .form-select:last-child {
-     margin-right: 0 !important;
+    margin-right: 0 !important;
 }
 
 .filter-sort-bar .text-md-end {
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* Alinear a la derecha */
+    justify-content: flex-end;
 }
 
 .filter-sort-bar .text-md-end .form-label {
-     margin-right: 0.5rem;
-     margin-bottom: 0;
-     flex-shrink: 0;
+    margin-right: 0.5rem;
+    margin-bottom: 0;
+    flex-shrink: 0;
 }
 
 .filter-sort-bar .text-md-end .form-select {
-     width: auto; /* Ancho automático o fijo */
-     flex-grow: 0;
-     flex-shrink: 0;
-     margin-right: 0; /* No margen a la derecha si es el último */
+    width: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-right: 0;
 }
 
-
-/* Estilos para las tarjetas de producto en el catálogo (reutilizando .product-card de style.css) */
 #productos-catalogo .product-card {
-     /* Ajustes si quieres que las tarjetas en el catálogo se vean diferente de los destacados */
-     border-radius: 0.5rem;
+    border-radius: 0.5rem;
 }
 
 #productos-catalogo .product-card img {
-    /* Ajusta esta altura para que coincida con la imagen de referencia si 300px no es exacto */
     height: 300px;
     object-fit: cover;
-    /* Asegurar bordes redondeados arriba si el card los tiene */
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
     border-bottom-left-radius: 0;
@@ -89,7 +79,7 @@
 
 #productos-catalogo .product-card .card-body {
     text-align: center;
-    padding: 1rem; /* Padding interno del cuerpo de la tarjeta */
+    padding: 1rem;
 }
 
 #productos-catalogo .product-card .card-title {
@@ -101,15 +91,10 @@
 #productos-catalogo .product-card .card-text {
     font-size: 1.0rem;
     font-weight: 700;
-    color: var(--dark-color); /* Color del precio (oscuro como en la imagen) */
+    color: var(--dark-color);
     margin-bottom: 0.5rem;
 }
 
-/* Estilos para los indicadores de color/tamaño (si los implementas en el HTML) */
-/* .product-colors span { ... } */
-
-
-/* Estilos para la paginación (reutilizando clases de Bootstrap y colores de tus variables) */
 .pagination {
     margin-top: 1.5rem;
 }
@@ -117,15 +102,17 @@
 .pagination .page-link {
     color: var(--primary-color);
 }
+
 .pagination .page-item.active .page-link {
-     background-color: var(--primary-color);
-     border-color: var(--primary-color);
-     color: var(--white-color);
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--white-color);
 }
+
 .pagination .page-link:hover {
-     color: var(--primary-color);
-     background-color: var(--light-color);
-     border-color: var(--primary-color);
+    color: var(--primary-color);
+    background-color: var(--light-color);
+    border-color: var(--primary-color);
 }
 
 .whatsapp-float {
