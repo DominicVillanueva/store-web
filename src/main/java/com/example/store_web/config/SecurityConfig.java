@@ -11,6 +11,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
 @Configuration
 @EnableWebSecurity
@@ -28,14 +29,15 @@ public class SecurityConfig {
   
   /**
    * Define la configuración principal de seguridad HTTP para la aplicación.Configura las reglas de autorización de URL, la página de login personalizada,
- la URL de redirección tras login exitoso y la configuración de logout.Permite que solo usuarios con rol ADMIN accedan a rutas bajo /admin/**
- y permite acceso libre al resto de URLs. 
+   * la URL de redirección tras login exitoso y la configuración de logout.Permite que solo usuarios con rol ADMIN accedan a rutas bajo /admin/**
+   * y permite acceso libre al resto de URLs. 
    * @param http
    * @return 
    */
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
     http
+      .csrf(csrf -> csrf.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())) // Habilita CSRF con repositorio de cookies
       .authorizeHttpRequests(auth -> auth
           .requestMatchers("/admin/**").hasRole("ADMIN")
           .anyRequest().permitAll()
