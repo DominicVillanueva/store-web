@@ -1,6 +1,7 @@
 package com.example.store_web.config;
 
 import com.example.store_web.service.CustomUserDetailsService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -17,15 +18,8 @@ import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 @EnableWebSecurity
 public class SecurityConfig {
 
-  private final CustomUserDetailsService userDetailsService;
-  
-  /**
-   * Constructor que integra el servicio personalizado para cargar detalles del usuario.Este servicio será utilizado para autenticar usuarios y validar credenciales.
-   * @param userDetailsService
-   */
-  public SecurityConfig(CustomUserDetailsService userDetailsService) {
-    this.userDetailsService = userDetailsService;
-  }
+  @Autowired
+  private CustomUserDetailsService userDetailsService;
   
   /**
    * Define la configuración principal de seguridad HTTP para la aplicación.Configura las reglas de autorización de URL, la página de login personalizada,
@@ -37,30 +31,30 @@ public class SecurityConfig {
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
     http
-      .csrf(csrf -> csrf.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())) // Habilita CSRF con repositorio de cookies
+      .csrf(csrf -> csrf.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()))
       .authorizeHttpRequests(auth -> auth
           .requestMatchers("/admin/**").hasRole("ADMIN")
           .anyRequest().permitAll()
       )
       .formLogin(form -> form
-          .loginPage("/login")               // Página personalizada para login
-          .defaultSuccessUrl("/admin/listar", true)  // URL tras login exitoso
-          .permitAll()                      // Permite acceso a login sin autenticación
+          .loginPage("/login")
+          .defaultSuccessUrl("/admin/listar", true)
+          .permitAll()
       )
       .logout(logout -> logout
-          .logoutUrl("/logout")             // URL para cerrar sesión
-          .logoutSuccessUrl("/login?logout=true") // URL tras logout exitoso
-          .permitAll()                     // Permite logout sin restricciones
+          .logoutUrl("/logout")
+          .logoutSuccessUrl("/login?logout=true")
+          .permitAll()
       );
     return http.build();
   }
 
   /**
    * Proporciona un bean para la codificación de contraseñas.Utiliza el algoritmo BCrypt, que es seguro y recomendado para almacenar passwords.
-   * @return
+   * @returns
    */
   @Bean
-  public PasswordEncoder passwordEncoder() {
+  public static PasswordEncoder passwordEncoder() {
     return new BCryptPasswordEncoder();
   }
   

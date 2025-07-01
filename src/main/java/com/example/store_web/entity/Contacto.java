@@ -1,4 +1,4 @@
-package com.example.store_web.model;
+package com.example.store_web.entity;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;

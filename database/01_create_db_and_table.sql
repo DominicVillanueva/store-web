@@ -40,7 +40,7 @@ CREATE TABLE contacto (
 );
 
 -- Crear tabla de administradores
-CREATE TABLE admin_usuario (
+CREATE TABLE usuario (
     id_admin INT AUTO_INCREMENT PRIMARY KEY,
     usuario VARCHAR(50) NOT NULL UNIQUE,
     contrasenia VARCHAR(255) NOT NULL

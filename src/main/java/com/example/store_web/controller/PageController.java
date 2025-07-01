@@ -1,8 +1,9 @@
 package com.example.store_web.controller;
 
-import com.example.store_web.model.Categoria;
-import com.example.store_web.model.Contacto;
-import com.example.store_web.model.Producto;
+import com.example.store_web.entity.Categoria;
+import com.example.store_web.entity.Contacto;
+import com.example.store_web.entity.Producto;
+import com.example.store_web.entity.Usuario;
 import com.example.store_web.service.CategoriaService;
 import com.example.store_web.service.ContactoService;
 import com.example.store_web.service.EmailService;
@@ -32,39 +33,22 @@ public class PageController {
     this.categoriaService = categoriaService;
   }
 
-  /**
-   * Método para mostrar la página principal.
-   * Agrega al modelo el URI actual para poder usarlo en la vista.
-   * Retorna la vista "pages/index".
-   */
   @GetMapping("/")
   public String homePage(Model model, HttpServletRequest request) {
     model.addAttribute("currentURI", request.getRequestURI());
     return "pages/index";
   }
 
-  /**
-   * Maneja el envío del formulario de contacto.Guarda la información del contacto y envía un correo con el mensaje recibido.
-   * Agrega mensajes de éxito o error al modelo para mostrarlos en la vista.
-   * Finalmente redirige a la página principal.
-   * @return 
-   */
   @PostMapping("/correo-enviado")
   public String enviarFormularioContacto(Contacto contacto, Model model) {
     try {
       contacto.setFechaEnvio(LocalDateTime.now());
 
       // Guardar contacto
-      contactoService.guardar(contacto);
+      contactoService.guardarContacto(contacto);
 
       // Enviar correo
       emailService.sendContactEmail(contacto, contacto.getMensaje());
-
-      System.out.println("Mensaje de contacto recibido y correo enviado");
-      System.out.println("Nombres: " + contacto.getNombre() + " " + contacto.getApellido());
-      System.out.println("Numero: " + contacto.getNumero());
-      System.out.println("Email: " + contacto.getCorreo());
-      System.out.println("Mensaje: " + contacto.getMensaje());
 
       model.addAttribute("mensaje", "¡Gracias por tu interés! Ha sido enviado con éxito.");
       model.addAttribute("tipoMensaje", "success");
@@ -79,23 +63,12 @@ public class PageController {
     return "redirect:/";
   }
 
-  /**
-   * Muestra la página de login.Añade al modelo el URI actual para que la vista pueda acceder a él.
-   * @return
-   */
   @GetMapping("/login")
   public String loginPage(Model model, HttpServletRequest request) {
     model.addAttribute("currentURI", request.getRequestURI());
     return "pages/login";
   }
-
-  /**
-   * Muestra el catálogo de productos.Permite filtrar por categoría, género y edad sugerida, si se especifican.
-   * Obtiene los productos filtrados o todos si no hay filtros.
-   * También carga todas las categorías para la vista.
-   * Añade al modelo los productos, categorías, filtros seleccionados y URI actual.
-   * @return 
-   */
+  
   @GetMapping("/catalogo")
   public String verCatalogo(Model model,
                             @RequestParam(name = "categoria", required = false) String nombreCategoria,
@@ -111,7 +84,7 @@ public class PageController {
     if(nombreCategoria != null || genero != null || edadSugerida != null) {
       productos = productoService.filtrarProductos(nombreCategoria, genero, edadSugerida);
     } else {
-      productos = productoService.listarTodos();
+      productos = productoService.listarProductos();
     }
 
     List<Categoria> categorias = categoriaService.listarTodos();
@@ -126,19 +99,20 @@ public class PageController {
     return "pages/catalogo";
   }
 
-  /**
-   * Muestra el detalle de un producto específico identificado por su id.
-   * Si el producto no existe, redirige al catálogo.
-   * Añade al modelo el producto para mostrar en la vista.
-   */
   @GetMapping("/producto/{id}")
   public String verDetalleProducto(@PathVariable("id") Integer id, Model model) {
-    Producto producto = productoService.buscarPorId(id);
+    Producto producto = productoService.buscarProductoById(id);
     if (producto == null) {
       return "redirect:/catalogo";
     }
     model.addAttribute("producto", producto);
     return "pages/detalle-producto";
+  }
+  
+  @GetMapping("/registro")
+  public String mostrarFormularioRegistro(Model model) {
+      model.addAttribute("usuario", new Usuario());
+      return "registro";
   }
 
   /**

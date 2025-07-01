@@ -1,6 +1,6 @@
 package com.example.store_web.service;
 
-import com.example.store_web.model.Contacto;
+import com.example.store_web.entity.Contacto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -12,7 +12,7 @@ public class EmailService {
   @Autowired
   private JavaMailSender mailSender;
   
-  private final String emailDestino = "cambiarcorreo@gmail.com";
+  private final String emailDestino = "softwarelibre97@gmail.com";
   
   /**
    * Envía un correo electrónico con la información de contacto recibida desde la web.
