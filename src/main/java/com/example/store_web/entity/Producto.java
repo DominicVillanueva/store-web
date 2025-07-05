@@ -31,6 +31,9 @@ public class Producto {
 
   @Column(name = "edad_sugerida", length = 20)
   private String edadSugerida;
+  
+  @Column(name = "stock", nullable = false)
+  private Integer stock;
 
   @ManyToOne
   @JoinColumn(name = "id_categoria")
@@ -108,4 +111,11 @@ public class Producto {
     this.categoria = categoria;
   }
 
+  public Integer getStock() {
+    return stock;
+  }
+
+  public void setStock(Integer stock) {
+    this.stock = stock;
+  }
 }

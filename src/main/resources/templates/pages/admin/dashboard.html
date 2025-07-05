@@ -31,8 +31,11 @@
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#agregarProductoModal">
                      <i class="fas fa-plus-circle me-2"></i>Agregar
                 </button>
+                <a href="/reporte/ventas" target="_blank" class="btn btn-outline-primary ms-2">
+                    <i class="fas fa-file-pdf me-1"></i> Generar Reporte de Ventas
+                </a>
             </div>
-
+            
             <div class="table-responsive">
                 <table class="table table-striped table-hover table-bordered align-middle">
                     <thead class="table-dark">
@@ -44,7 +47,7 @@
                             <th class="text-center">Imagen</th>
                             <th>Descripción</th>
                             <th>Categoría</th>
-                            <th>Edades</th>
+                            <th>Stock</th>
                             <th class="text-center">Acciones</th>
                         </tr>
                     </thead>
@@ -65,7 +68,7 @@
                             </td>
                             <td th:text="${producto.descripcion}">Descripción del producto...</td>
                             <td th:text="${producto.categoria?.nombre ?: 'N/A'}">Ropa Niña</td>
-                            <td th:text="${producto.edadSugerida}">edades</td>
+                            <td th:text="${producto.stock}">0</td>
                             <td class="text-center action-buttons">
                                 <form th:action="@{/admin/editar/{idProducto}(idProducto=${producto.idProducto})}" method="get" style="display:inline;">
                                     <button type="submit" class="btn btn-warning btn-sm">

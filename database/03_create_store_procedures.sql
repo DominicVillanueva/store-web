@@ -17,7 +17,8 @@ BEGIN
         p.talla,
         p.genero,
         p.edad_sugerida,
-        p.id_categoria
+        p.id_categoria,
+        p.stock
     FROM
         producto p
     INNER JOIN

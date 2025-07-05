@@ -71,6 +71,7 @@ public class AdminController {
     existentProducto.setImagenUrl(productoNuevo.getImagenUrl());
     existentProducto.setTalla(productoNuevo.getTalla());
     existentProducto.setGenero(productoNuevo.getGenero());
+    existentProducto.setStock(productoNuevo.getStock());
     existentProducto.setCategoria(productoNuevo.getCategoria());
     productoService.actualizarProducto(existentProducto);
     return "redirect:/admin/listar";

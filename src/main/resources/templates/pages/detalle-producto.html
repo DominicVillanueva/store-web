@@ -53,6 +53,7 @@
                         <li><strong>Talla:</strong> <span th:text="${producto.talla}">Talla</span></li>
                         <li><strong>Género:</strong> <span th:text="${producto.genero}">Género</span></li>
                         <li><strong>Edad sugerida:</strong> <span th:text="${producto.edadSugerida}">Edad</span></li>
+                        <li><strong>Stock:</strong> <span th:text="${producto.stock}">Stock</span></li>
                     </ul>
                     <a href="/catalogo" class="btn btn-outline-primary mt-4"><i class="fa fa-arrow-left me-2"></i>Volver al catálogo</a>
                 </div>
@@ -86,5 +87,6 @@
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
     <script th:src="@{/js/carrito.js}"></script>
+    <script th:src="@{/js/logout.js}"></script>
 </body>
 </html>

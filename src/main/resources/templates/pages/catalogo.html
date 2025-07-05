@@ -19,7 +19,8 @@
 
     <link rel="stylesheet" th:href="@{/css/style.css}">
     <link rel="stylesheet" th:href="@{/css/header.css}">
-    <link rel="stylesheet" th:href="@{/css/catalogo.css}">   
+    <link rel="stylesheet" th:href="@{/css/catalogo.css}">
+    <link rel="stylesheet" th:href="@{/css/modal.css}">
 </head>
 <body th:attr="data-usuario-logueado=${session.usuarioLogueado != null}">
 
@@ -71,14 +72,15 @@
     <section id="productos-catalogo" class="py-5">
         <div class="container">
             <div class="row">
-                <div class="col-6 col-md-4 col-lg-3 mb-4 d-flex flex-column align-items-center" th:each="producto : ${productos}">
+                <div class="col-6 col-md-4 col-lg-3 mb-4 d-flex flex-column align-items-center position-relative" th:each="producto : ${productos}">
                     <a th:href="@{'/producto/' + ${producto.idProducto}}" class="text-decoration-none text-dark">
                         <div class="card product-card h-90 shadow">
                             <img th:src="${producto.imagenUrl}" class="card-img-top" th:alt="${producto.nombre}">
                             <div class="card-body text-center">
                                 <h5 class="card-title" th:text="${producto.nombre}">Nombre del Producto</h5>
                                 <p class="card-text text-primary fw-bold" th:text="'$' + ${#numbers.formatDecimal(producto.precio, 0, 'COMMA', 2, 'POINT')}">$XX.XX</p>
-                             </div>
+                                <p class="text-muted mb-0" th:text="'Stock: ' + ${producto.stock}">Stock: XX</p>
+                            </div>
                         </div>
                     </a>
                     <button type="button"
@@ -86,9 +88,11 @@
                             th:data-id="${producto.idProducto}"
                             th:data-nombre="${producto.nombre}"
                             th:data-precio="${producto.precio}"
-                            th:data-imagen="${producto.imagenUrl}">
+                            th:data-imagen="${producto.imagenUrl}"
+                            th:disabled="${producto.stock == 0}">
                         <i class="fas fa-cart-plus me-1"></i> Agregar al carrito
                     </button>
+                    <span class="badge bg-danger position-absolute me-3 end-0" th:if="${producto.stock == 0}">Sin stock</span>
                 </div>
                 <div class="col-12 text-center" th:if="${productos.empty}">
                     <p>No se encontraron productos que coincidan con los filtros.</p>
@@ -124,7 +128,7 @@
             <div class="modal-content shadow-lg rounded-4 border-0">
                 <div class="modal-header border-0 pb-0">
                     <h5 class="modal-title w-100 text-center" id="loginRequiredModalLabel">
-                        <i class="fas fa-lock me-2 text-primary"></i> Inicia sesión
+                        <i class="fas fa-lock me-2"></i> Inicia sesión
                     </h5>
                     <button type="button" class="btn-close position-absolute end-0 top-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -144,5 +148,6 @@
             crossorigin="anonymous">
     </script>
     <script th:src="@{/js/carrito.js}"></script>
+    <script th:src="@{/js/logout.js}"></script>
 </body>
 </html>

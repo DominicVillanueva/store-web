@@ -30,23 +30,21 @@
 
             <div class="navbar-nav ms-auto d-flex flex-row align-items-center justify-content-end">
                 <!-- Ícono y nombre del usuario solo si está logueado -->
-                <div class="d-flex align-items-center" th:if="${session.usuarioLogueado != null}">
-                    <a class="nav-link me-2" href="/usuario/perfil">
-                        <i class="fas fa-user me-1"></i>
-                        <span class="" th:text="${session.usuarioLogueado.nombre}">Nombre Usuario</span>
-                    </a>
+                <div class="d-flex align-items-center me-2" th:if="${session.usuarioLogueado != null}">
+                    <i class="fas fa-user me-1"></i>
+                    <span class="" th:text="${session.usuarioLogueado.nombre}">Nombre Usuario</span>
                 </div>
 
                 <!-- Carrito siempre visible -->
-                <a class="nav-link me-2 position-relative" href="/carrito" id="carrito-icono">
+                <a class="nav-link me-3 position-relative" href="/carrito" id="carrito-icono">
                     <i class="fas fa-shopping-cart"></i>
                     <span id="contador-carrito" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                         0
                     </span>
                 </a>
                 
-                <form th:action="@{/logout}" method="post" style="display:inline;" th:if="${session.usuarioLogueado != null}">
-                    <button type="submit" class="nav-link btn btn-outline-muted btn-sm" style="border: none; background: none; padding: 0;">
+                <form id="logoutForm" th:action="@{/logout}" method="post" style="display:inline;" th:if="${session.usuarioLogueado != null}">
+                    <button type="button" class="nav-link btn btn-outline-muted btn-sm" style="border: none; background: none; padding: 0;">
                         <i class="fas fa-sign-out-alt me-2"></i>Logout
                     </button>
                 </form>

@@ -14,6 +14,24 @@ CREATE TABLE categoria (
     nombre VARCHAR(100) NOT NULL
 );
 
+-- Crear tabla de venta
+CREATE TABLE venta (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    fecha DATETIME NOT NULL,
+    total DECIMAL(10,2) NOT NULL
+);
+
+CREATE TABLE venta_detalle (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_venta INT NOT NULL,
+    id_producto INT NOT NULL,
+    cantidad INT NOT NULL,
+    precio_unitario DECIMAL(10,2) NOT NULL,
+    subtotal DECIMAL(10,2) NOT NULL,
+    FOREIGN KEY (id_venta) REFERENCES venta(id) ON DELETE CASCADE,
+    FOREIGN KEY (id_producto) REFERENCES producto(id_producto)
+);
+
 -- Crear tabla de productos
 CREATE TABLE producto (
     id_producto INT AUTO_INCREMENT PRIMARY KEY,
@@ -25,6 +43,7 @@ CREATE TABLE producto (
     genero ENUM('NIÑO', 'NIÑA', 'UNISEX') NOT NULL,
     edad_sugerida VARCHAR(20),
     id_categoria INT,
+    stock INT NOT NULL DEFAULT 0,
     FOREIGN KEY (id_categoria) REFERENCES categoria(id_categoria)
 );
 
@@ -52,4 +71,3 @@ CREATE TABLE usuario (
     clave VARCHAR(255) NOT NULL,
     rol ENUM('Admin', 'Usuario') NOT NULL
 );
-
