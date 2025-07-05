@@ -41,8 +41,15 @@ CREATE TABLE contacto (
 
 -- Crear tabla de administradores
 CREATE TABLE usuario (
-    id_admin INT AUTO_INCREMENT PRIMARY KEY,
+    idusuario INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    apellido VARCHAR(100) NOT NULL,
+    correo VARCHAR(150) NOT NULL UNIQUE,
+    telefono VARCHAR(20) NOT NULL,
+    genero ENUM('Masculino', 'Femenino') NOT NULL,
+    edad INT NOT NULL,
     usuario VARCHAR(50) NOT NULL UNIQUE,
-    contrasenia VARCHAR(255) NOT NULL
+    clave VARCHAR(255) NOT NULL,
+    rol ENUM('Admin', 'Usuario') NOT NULL
 );
 

@@ -83,36 +83,16 @@
 }
 
 #productos-catalogo .product-card .card-title {
-    font-size: 1.1rem;
+    font-size: .8rem;
     font-weight: 600;
     margin-bottom: 0.25rem;
 }
 
 #productos-catalogo .product-card .card-text {
-    font-size: 1.0rem;
+    font-size: .8rem;
     font-weight: 700;
     color: var(--dark-color);
     margin-bottom: 0.5rem;
-}
-
-.pagination {
-    margin-top: 1.5rem;
-}
-
-.pagination .page-link {
-    color: var(--primary-color);
-}
-
-.pagination .page-item.active .page-link {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-    color: var(--white-color);
-}
-
-.pagination .page-link:hover {
-    color: var(--primary-color);
-    background-color: var(--light-color);
-    border-color: var(--primary-color);
 }
 
 .whatsapp-float {
@@ -143,14 +123,13 @@
 }
 
 .btn-outline-primary {
-    margin-left: 3rem;
     font-family: var(--font-poppins);
     font-weight: 600;
-    padding: 0.9rem 2.8rem;
     border-radius: 50px;
     transition: all 0.3s ease;
     color: var(--primary-color);
     border-color: var(--primary-color);
+    font-size: .8rem;
 }
 
 .btn-outline-primary:hover {

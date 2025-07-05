@@ -3,47 +3,65 @@
 <head>
 </head>
 <body>
-    <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm" th:fragment="navbar">
-        <div class="container">
-            <a class="navbar-brand logo-text" href="/">Meyko</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
+<nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm" th:fragment="navbar">
+    <div class="d-flex mx-4 w-100 justify-content-between">
+        <a class="navbar-brand logo-text" href="/">Meyko</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav flex-fill">
+                <li class="nav-item">
+                    <a class="nav-link" th:classappend="${currentURI == '/'} ? 'active'" href="/">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/#quienes-somos">Quiénes Somos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:classappend="${currentURI == '/catalogo'} ? 'active'" href="/catalogo">Tienda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/#productos-destacados">Favoritos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/#testimonios">Testimonios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/#contactanos">Contáctanos</a>
+                </li>
+            </ul>
 
-                    <li class="nav-item">
-                        <a class="nav-link" th:classappend="${currentURI == '/'} ? 'active'" href="/">Inicio</a>
-                    </li>
+            <div class="navbar-nav ms-auto d-flex flex-row align-items-center justify-content-end">
+                <!-- Ícono y nombre del usuario solo si está logueado -->
+                <div class="d-flex align-items-center" th:if="${session.usuarioLogueado != null}">
+                    <a class="nav-link me-2" href="/usuario/perfil">
+                        <i class="fas fa-user me-1"></i>
+                        <span class="" th:text="${session.usuarioLogueado.nombre}">Nombre Usuario</span>
+                    </a>
+                </div>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="/#quienes-somos">Quiénes Somos</a>
-                    </li>
-
-                     <li class="nav-item">
-                         <a class="nav-link" th:classappend="${currentURI == '/catalogo'} ? 'active'" href="/catalogo">Tienda</a>
-                     </li>
-
-                     <li class="nav-item">
-                        <a class="nav-link" href="/#productos-destacados">Favoritos</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="/#testimonios">Testimonios</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="/#contactanos">Contáctanos</a>
-                    </li>
-                </ul>
-                <div class="navbar-nav ms-auto d-flex flex-row align-items-center">
-                     <a class="nav-link me-2 me-lg-0" href="/login"><i class="fas fa-user"></i></a>
-                     <!-- Botón de Registro -->
-                    <a class="nav-link px-2 py-1 small border rounded ms-2" href="/registro">Registrarse</a>
+                <!-- Carrito siempre visible -->
+                <a class="nav-link me-2 position-relative" href="/carrito" id="carrito-icono">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="contador-carrito" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        0
+                    </span>
+                </a>
+                
+                <form th:action="@{/logout}" method="post" style="display:inline;" th:if="${session.usuarioLogueado != null}">
+                    <button type="submit" class="nav-link btn btn-outline-muted btn-sm" style="border: none; background: none; padding: 0;">
+                        <i class="fas fa-sign-out-alt me-2"></i>Logout
+                    </button>
+                </form>
+                
+                <!-- Solo botón "Iniciar Sesión" si NO ha iniciado sesión -->
+                <div class="d-flex align-items-center" th:if="${session.usuarioLogueado == null}">
+                    <a class="nav-link px-2 py-1 small border rounded ms-2" href="/login">Login</a>
                 </div>
             </div>
         </div>
-    </nav>
+        <button class="navbar-toggler align-self-start mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</nav>
 </body>
 </html>

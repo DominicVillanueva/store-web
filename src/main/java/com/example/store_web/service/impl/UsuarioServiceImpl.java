@@ -23,6 +23,14 @@ public class UsuarioServiceImpl implements UsuarioService{
   
   @Override
   public Usuario guardarUsuario(Usuario usuario) {
+    if(usuarioRepository.findByUsuario(usuario.getUsuario()) != null) {
+      throw new RuntimeException("El nombre de usuario ya está registrado");
+    }
+    
+    if(usuarioRepository.findByEmail(usuario.getCorreo()) != null) {
+      throw new RuntimeException("El correo electrónico ya está registrado");
+    }
+    
     usuario.setClave(passwordEncoder.encode(usuario.getClave()));
     return usuarioRepository.save(usuario);
   }

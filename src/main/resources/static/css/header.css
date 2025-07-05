@@ -7,6 +7,7 @@
     --font-heading: 'Pacifico', cursive;
     --font-poppins: 'Poppins', sans-serif;
     --primary-color-rgb: 233, 30, 99;
+    --secondary-color-rgb: 255, 193, 7;
 }
 
 
@@ -33,14 +34,11 @@
     font-family: var(--font-poppins);
     font-weight: 500;
     color: var(--dark-color);
-    margin-right: 25px;
+    margin-right: 12px;
     padding: 0.5rem 0.8rem;
     position: relative;
     transition: color 0.3s ease, background-color 0.3s ease;
     border-radius: 5px;
-}
-.nav-link:last-child {
-    margin-right: 0;
 }
 
 .nav-link::after {
@@ -95,8 +93,7 @@
 }
 
 .navbar-nav.d-flex.flex-row a.nav-link {
-    margin-left: 15px;
-    margin-right: 0;
+    margin-right: 15px;
     padding: 0.5rem 0.5rem;
     border-bottom: none;
 }
@@ -108,7 +105,17 @@ body {
      padding-top: 90px;
 }
 
-:root {
-    --primary-color-rgb: 233, 30, 99;
-    --secondary-color-rgb: 255, 193, 7;
+#carrito-icono {
+    position: relative;
+}
+
+#contador-carrito {
+    font-size: 0.75rem;
+    padding: 0.25em 0.5em;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    min-width: 20px;
+    text-align: center;
+    line-height: 1;
 }

@@ -111,8 +111,13 @@ public class PageController {
   
   @GetMapping("/registro")
   public String mostrarFormularioRegistro(Model model) {
-      model.addAttribute("usuario", new Usuario());
-      return "registro";
+    model.addAttribute("usuarioRegistrado", new Usuario());
+    return "pages/registro";
+  }
+  
+  @GetMapping("/carrito")
+  public String mostrarCarrito(Model model) {
+    return "pages/carrito";
   }
 
   /**

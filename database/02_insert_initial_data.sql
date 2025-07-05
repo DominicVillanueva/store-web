@@ -54,8 +54,8 @@ INSERT INTO producto (nombre, descripcion, precio, imagen_url, talla, id_categor
 
 -- Insertar administradores
 -- Para loguearse es: usuario: admin, contraseña: admin
-INSERT INTO usuario (usuario, contrasenia) VALUES
-('admin', '$2a$12$H/7Qaa2HRLkl/YhaxFSk5uLCrNxESCNuLAX93DlZpFmx.M8r0beri');
+INSERT INTO usuario (nombre, apellido, correo, telefono, genero, edad, usuario, clave, rol)
+VALUES ('Administrador', 'Del Sistema', 'admin@correo.com', '999999999', 'Masculino', 30, 'admin', '$2a$12$H/7Qaa2HRLkl/YhaxFSk5uLCrNxESCNuLAX93DlZpFmx.M8r0beri', 'Admin');
 
 -- Insertar contactos de prueba
 INSERT INTO contacto (nombre, correo, mensaje, fecha_envio) VALUES
